@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas Ordenadas</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+    Lista HTML ordenada
+    Uma lista ordenada começa com a <ol>tag. Cada item da lista começa com a <li>tag.
+
+    Lista HTML ordenada - O atributo Type
+    O typeatributo da <ol>tag define o tipo do marcador do item da lista:
+
+     Tipo	Descrição
+    type="1"	Os itens da lista serão numerados com números (padrão)
+    type="A"	Os itens da lista serão numerados com letras maiúsculas
+    type="a"	Os itens da lista serão numerados com letras minúsculas
+    type="I"	Os itens da lista serão numerados com algarismos romanos maiúsculos
+    type="i"	Os itens da lista serão numerados com algarismos romanos minúsculos
+    
+    Contagem da lista de controle
+    Por padrão, uma lista ordenada começa a contagem a partir de 1. Se você quiser começar a contagem a partir de um número específico, pode usar o startatributo:
+    
+    <ol start="50">
+    <li>Café</li>
+    <li>Chá</li>
+    <li>Leite</li>
+    </ol>
+    -->
+
+    <h1>Listas ordenadas</h1>
+
+    <ol type="1" start="1">
+        <li>Queijo</li>
+        <li>Presunto</li>
+        <li>Farinha</li>
+    </ol>
+
+    <h2>Modo de preparo</h2>
+
+    <ol>
+        <li>Derreta a manteiga e reserve</li> <hr>
+        <li>Enquanto derrete a manteiga, misture os 3 ovos e a açúcar e misture bem</li> <hr>
+        <li>Acrescente a manteiga derretida no ovo e o açúcar</li> <hr> 
+        <li>Agora é so misturar o achocolatado e o trigo</li> <hr>
+        <li>Unte uma forma com manteiga e achocolatado</li> <hr>
+        <li>Leve ao forno a 180° por 30 minutos</li> <hr>
+    </ol>
+
+    <h2>Lista de filmes favoritos</h2>
+
+    <ol start="1">
+        <li>Comédia</li>
+        <ol>
+            <li>Gente Grande</li>
+            <li>Um ninja da Pesada</li>
+            <li>Anjos da Lei</li>
+            <li>O Primeiro Mentiroso</li>
+            <li>Todo Poderoso</li>
+        </ol>
+    </ol>
+
+    <ol start="2">
+        <li>Ação</li>
+        <ol>
+            <li>Matrix</li>
+            <li>Mad Max: Estrada da Fúria</li>
+            <li>Missão: Impossível</li>
+            <li>John Wick</li>
+            <li>O Exterminador do Futuro 2</li>
+        </ol>
+    </ol>
+
+    <ol start="3">
+        <li>Ficção Científica</li>
+        <ol>
+            <li>Interestelar</li>
+            <li>A Chegada</li>
+            <li>Blade Runner</li>
+            <li>De Volta para o Futuro</li>
+            <li>Uma Odisseia no Espaço</li>
+        </ol>
+    </ol>
+
+</body>
+</html>

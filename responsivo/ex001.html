@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Responsivo HTML</title>
+</head>
+<body>
+    <!--
+    O design responsivo para web consiste em usar HTML e CSS para redimensionar, ocultar, diminuir ou aumentar automaticamente um site, de forma que ele tenha uma boa aparência em todos os dispositivos (desktops, tablets e celulares):
+
+    Imagens responsivas
+    Imagens responsivas são imagens que se adaptam perfeitamente a qualquer tamanho de navegador.
+
+    Usando a propriedade de largura
+    Se a propriedade CSS widthestiver definida como 100%, a imagem será responsiva e poderá ser redimensionada para cima e para baixo:
+
+    Exemplo
+    <img src="img_girl.jpg" style="width:100%;">
+
+      Observe que, no exemplo acima, a imagem pode ser ampliada para um tamanho maior que o original. Uma solução melhor, em muitos casos, será usar a max-widthpropriedade em vez disso.
+
+      Utilizando a propriedade max-width
+      Se a max-widthpropriedade estiver definida como 100%, a imagem será redimensionada se necessário, mas nunca será redimensionada para um tamanho maior que o original:
+
+      Exemplo
+    <img src="img_girl.jpg" style="max-width:100%;height:auto;">
+  
+
+
+    -->
+
+    <picture>
+        <source srcset="">
+        <img src="img/flowers.jpg" alt="">
+    </picture>
+</body>
+</html>

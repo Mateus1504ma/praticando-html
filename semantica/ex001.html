@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantica</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    Elementos Semânticos HTML
+
+    Elementos semânticos = elementos que possuem um significado.
+
+    Um elemento semântico descreve claramente seu significado tanto para o navegador quanto para o desenvolvedor.
+
+    Exemplos de elementos não semânticos : <div>e <span>- Não informa nada sobre seu conteúdo.
+
+    Exemplos de elementos semânticos<img> : , <table>, e <article>- Define claramente seu conteúdo.
+
+     • <article> (Artigo): Representa um conteúdo autônomo, independente e reutilizável. Ele faz sentido sozinho, mesmo fora do contexto da página (como um post de blog, uma notícia, um comentário de usuário ou um cartão de produto). Você pode republicar um article em outro site e ele continuará compreensível.
+
+     • <section> (Seção): Representa um agrupamento temático de conteúdo, geralmente com um título próprio (<h1> a <h6>). Ela serve para dividir a página em blocos lógicos (por exemplo: uma seção "Sobre Nós", uma seção "Servícios" ou uma seção "Contato"). Uma section sozinha, isolada do resto da página, muitas vezes perde o sentido.
+        
+     
+    Exemplo prático de uso
+
+    Pense em um jornal:
+    • A página inteira tem uma <section> chamada "Esportes" ou "Cultura", que agrupa vários assuntos daquele tema.
+    • Dentro dessa seção, cada notícia individual é um <article> (uma peça completa e isolada que você pode ler do começo ao fim).
+        
+    
+    Regras rápidas de escolha
+
+    • Use <article> quando: O conteúdo puder ser distribuído, compartilhado ou lido de forma totalmente isolada (ex: artigo de blog, comentário, widget de clima).
+    • Use <section> quando: Precisar agrupar elementos que compartilham o mesmo tema, mas que não necessariamente formam uma unidade isolada por si só.    
+
+    Elemento HTML <header>
+    O <header>elemento representa um contêiner para conteúdo introdutório ou um conjunto de links de navegação.
+
+    Um <header>elemento normalmente contém:
+
+    um ou mais elementos de cabeçalho (<h1> - <h6>)
+    logotipo ou ícone
+    informações de autoria
+    Observação: Você pode ter vários <header>elementos em um documento HTML. No entanto, o elemento <header> não pode ser colocado dentro de um <div> <footer>, <address> ou outro <header>elemento.
+
+    Elemento HTML <footer>
+    O <footer>elemento define um rodapé para um documento ou seção.
+
+    Um <footer>elemento normalmente contém:
+
+    informações de autoria
+    informações sobre direitos autorais
+    informações de contato
+    mapa do site
+    Voltar ao topo
+    documentos relacionados
+    Você pode ter vários <footer>elementos em um único documento.
+        
+    Elemento HTML <nav>
+    O <nav>elemento define um conjunto de links de navegação.
+        
+    <nav>
+    <a href="/html/">HTML</a> |
+    <a href="/css/">CSS</a> |
+    <a href="/js/">JavaScript</a> |
+    <a href="/jquery/">jQuery</a>
+
+    Elemento HTML <aside>
+    O <aside>elemento define um conteúdo adicional ao conteúdo em que está inserido (como uma barra lateral).
+    O <aside>conteúdo deve estar indiretamente relacionado ao conteúdo circundante.
+
+    Elementos HTML <figure> e <figcaption>
+
+    A <figure>tag especifica conteúdo autossuficiente, como ilustrações, diagramas, fotos, listagens de código, etc.
+    A <figcaption>tag define uma legenda para um <figure>elemento. O <figcaption>elemento pode ser colocado como o primeiro ou o último filho de outro <figure>elemento.
+    O <img>elemento define a imagem/ilustração propriamente dita.
+    
+    Exemplo
+    <figure>
+    <img src="pic_trulli.jpg" alt="Trulli">
+    <figcaption>Fig1. - Trulli, Puglia, Italy.</figcaption>
+    </figure>
+
+    Por que elementos semânticos?
+    Segundo o W3C: "Uma Web semântica permite que os dados sejam compartilhados e reutilizados em aplicativos, empresas e comunidades."
+
+    <article>	Define conteúdo independente e autossuficiente
+    <aside>	Define conteúdo à parte do conteúdo principal da página
+    <details>	Define detalhes adicionais que o usuário pode exibir ou ocultar
+    <figcaption>	Define uma legenda para um elemento <figure>
+    <figure>	Especifica conteúdo autossuficiente, como ilustrações, diagramas, fotos, listagens de código, etc.
+    <footer>	Define um rodapé para um documento ou seção
+    <header>	Especifica um cabeçalho para um documento ou seção
+    <main>	Especifica o conteúdo principal de um documento
+    <mark>	Define texto marcado/destacado
+    <nav>	Define links de navegação
+    <section>	Define uma seção em um documento
+    <summary>	Define um título visível para um elemento <details>
+    <time>	Define uma data/hora    
+    -->
+
+    <header>
+        <h1>Título principal</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Tecnologia</h2>
+            <article>
+                <h3>HTML</h3>
+                <p>O HTML (Linguagem de Marcação de Hipertexto) é a linguagem padrão utilizada para criar e estruturar a base de páginas na internet.</p>
+            </article>
+
+            <article>
+                <h3>CSS</h3>
+                <p>O CSS (Cascading Style Sheets ou Folhas de Estilo em Cascata) é uma linguagem declarativa usada para definir a aparência e o design de páginas web.</p>
+            </article>
+
+            <article>
+                <h3>Javascript</h3>
+                <p>O JavaScript (frequentemente chamado de JS) é uma linguagem de programação interpretada, de alto nível e com tipagem dinâmica.</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Futebol</h2>
+
+            <article>
+                <h3>Vasco quebra tabu de 75 anos ao vencer Boca Juniors pela Sul-Americana</h3>
+                <p>Clube carioca conseguiu importante triunfo na Argentina nesta terça-feira (13) para abrir vantagem nas semifinais da competição continental</p>
+            </article>
+
+            <article>
+                 <h3>Fluminense x Palmeiras: onde assistir ao vivo, horário e escalações</h3>
+                <p>Veja também desfalques, arbitragem e outras informações do jogo de ida da semifinal da Conmebol Libertadores; TV Globo e ge tv transmitem ao vivo</p>
+                <footer>
+                  <p></p>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>

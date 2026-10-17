@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos</title>
+</head>
+<body>
+    <!--
+    Atributos de formulário HTML
+    Este capítulo descreve os diferentes atributos do <form>elemento HTML.
+
+    O atributo de ação
+    O actionatributo define a ação a ser executada quando o formulário for enviado.
+    Normalmente, os dados do formulário são enviados para um arquivo no servidor quando o usuário clica no botão de enviar.
+    No exemplo abaixo, os dados do formulário são enviados para um arquivo chamado "action_page.php". Este arquivo contém um script do lado do servidor que processa os dados do formulário:
+    
+    Exemplo
+    Ao submeter o formulário, envie os dados para "action_page.php":
+
+    <form action="/action_page.php">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    Dica: Se o actionatributo for omitido, a ação será definida para a página atual.
+
+    O Atributo Alvo
+    O targetatributo especifica onde exibir a resposta recebida após o envio do formulário.
+    O targetatributo pode ter um dos seguintes valores:
+
+    _blank	A resposta é exibida em uma nova janela ou aba
+    _self	A resposta é exibida na janela atual
+    _parent	A resposta é exibida no frame pai
+    _top	A resposta é exibida em todo o corpo da janela
+    _framename A resposta é exibida em um iframe nomeado
+    O valor padrão é _self, o que significa que a resposta será aberta na janela atual.
+
+    O atributo Método
+    O methodatributo especifica o método HTTP a ser usado ao enviar os dados do formulário.
+    Os dados do formulário podem ser enviados como variáveis ​​de URL (com method="get") ou como transação HTTP POST (com method="post").
+    O método HTTP padrão para o envio de dados de formulário é GET.
+    
+    Exemplo
+    Este exemplo utiliza o método GET ao enviar os dados do formulário:
+    <form action="/action_page.php" method="get">
+
+     Notas sobre o GET:
+
+    Anexa os dados do formulário à URL, em pares nome/valor.
+    NUNCA use o método GET para enviar dados confidenciais! (os dados do formulário enviado ficam visíveis na URL!)
+    O comprimento de um URL é limitado (2048 caracteres).
+    Útil para envios de formulários onde o usuário deseja salvar o resultado.
+    O método GET é adequado para dados não seguros, como strings de consulta no Google.
+
+    Notas sobre POST:
+
+    Anexa os dados do formulário ao corpo da requisição HTTP (os dados do formulário enviado não são exibidos na URL).
+    O método POST não possui limitações de tamanho e pode ser usado para enviar grandes quantidades de dados.
+    Os formulários enviados via POST não podem ser adicionados aos favoritos.
+    Dica: Sempre utilize o método POST se os dados do formulário contiverem informações sensíveis ou pessoais! 
+    
+    O atributo Autocomplete
+    O autocompleteatributo especifica se um formulário deve ter o recurso de preenchimento automático ativado ou desativado.
+    Quando o recurso de preenchimento automático está ativado, o navegador completa automaticamente os valores com base nos valores que o usuário inseriu anteriormente.
+
+    Exemplo
+    Um formulário com preenchimento automático ativado:
+    <form action="/action_page.php" autocomplete="on">
+
+    O atributo Novalidate
+    O novalidateatributo é um atributo booleano.
+    Quando presente, especifica que os dados do formulário (entrada) não devem ser validados ao serem enviados. 
+    
+    Exemplo
+    Um formulário com um atributo novalidate:
+    <form action="/action_page.php" novalidate>
+
+    Lista de todos os atributos do formulário
+
+    accept-charset	Especifica as codificações de caracteres utilizadas no envio do formulário
+    action	Especifica para onde os dados do formulário devem ser enviados quando este for submetido
+    autocomplete	Define se o preenchimento automático (autocomplete) deve estar ativado ou desativado no formulário
+    enctype	Especifica como os dados do formulário devem ser codificados ao serem enviados ao servidor (apenas para method="post")
+    method	Especifica o método HTTP a ser utilizado no envio dos dados do formulário
+    name	Especifica o nome do formulário
+    novalidate	Indica que o formulário não deve ser validado no momento do envio
+    rel	Especifica a relação entre um recurso vinculado e o documento atual
+    target	Especifica onde a resposta recebida após o envio do formulário deve ser exibida
+    
+    Atributos de entrada HTML
+
+    O atributo de valor
+    O valueatributo input especifica um valor inicial para um campo de entrada:
+
+    Exemplo
+    Campos de entrada com valores iniciais (padrão):
+
+    <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe">
+    </form>
+
+    O atributo somente leitura
+    O readonlyatributo input especifica que um campo de entrada é somente leitura.
+
+    Um campo de entrada somente leitura não pode ser modificado (no entanto, o usuário pode navegar até ele usando a tecla Tab, selecioná-lo e copiar o texto).
+    O valor de um campo de entrada somente leitura será enviado ao submeter o formulário!
+
+    Exemplo
+    Um campo de entrada somente leitura:
+
+    <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John" readonly><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe">
+    </form>
+
+    O atributo desativado
+    O disabledatributo input especifica que um campo de entrada deve ser desativado.
+    Um campo de entrada desativado é inutilizável e não clicável.
+    O valor de um campo de entrada desabilitado não será enviado ao submeter o formulário!
+
+    O atributo de tamanho
+    O sizeatributo input especifica a largura visível, em caracteres, de um campo de entrada.
+
+    O valor padrão sizeé 20.
+
+    Observação: o sizeatributo funciona com os seguintes tipos de entrada: texto, pesquisa, telefone, URL, e-mail e senha.
+
+    Exemplo
+    Defina a largura de um campo de entrada:
+
+    <form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" size="50"><br>
+  <label for="pin">PIN:</label><br>
+  <input type="text" id="pin" name="pin" size="4">
+</form>
+
+    O atributo maxlength
+    O maxlengthatributo input especifica o número máximo de caracteres permitidos em um campo de entrada.
+
+    Observação: Quando `a` maxlengthé definido, o campo de entrada não aceitará mais do que o número de caracteres especificado. No entanto, esse atributo não fornece nenhum feedback. Portanto, se você quiser alertar o usuário, precisará escrever código JavaScript.
+
+    Exemplo
+    Defina um comprimento máximo para um campo de entrada:
+
+    <form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" size="50"><br>
+  <label for="pin">PIN:</label><br>
+  <input type="text" id="pin" name="pin" maxlength="4" size="4">
+    </form>
+
+    Os atributos mínimo e máximo
+    Os parâmetros  min e max especificam os valores mínimo e máximo para um campo de entrada.
+
+    Os atributos min e max funcionam com os seguintes tipos de entrada: número, intervalo, data, data e hora local, mês, hora e semana.
+
+    Dica: Use os atributos máximo e mínimo em conjunto para criar um intervalo de valores válidos.
+
+    Exemplo
+    Defina uma data máxima, uma data mínima e um intervalo de valores válidos:
+
+    <form>
+  <label for="datemax">Enter a date before 1980-01-01:</label>
+  <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+
+  <label for="datemin">Enter a date after 2000-01-01:</label>
+  <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
+
+  <label for="quantity">Quantity (between 1 and 5):</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="5">
+    </form>
+
+    O atributo múltiplo
+    O multipleatributo input especifica que o usuário pode inserir mais de um valor em um campo de entrada.
+
+    O multipleatributo funciona com os seguintes tipos de entrada: e-mail e arquivo.
+
+    Exemplo
+    Um campo para upload de arquivos que aceita múltiplos valores:
+
+    <form>
+    <label for="files">Select files:</label>
+    <input type="file" id="files" name="files" multiple>
+    </form>
+
+    O atributo de padrão
+    O patternatributo input especifica uma expressão regular que é usada para verificar o valor do campo de entrada quando o formulário é enviado.
+
+    O patternatributo funciona com os seguintes tipos de entrada: texto, data, pesquisa, URL, telefone, e-mail e senha.
+
+    Dica: Utilize o atributo de título global para descrever o padrão e ajudar o usuário.
+
+    Dica: Saiba mais sobre expressões regulares em nosso tutorial de JavaScript.
+
+    Exemplo
+    Um campo de entrada que pode conter apenas três letras (sem números ou caracteres especiais):
+
+    <form>
+    <label for="country_code">Country code:</label>
+    <input type="text" id="country_code" name="country_code"
+    pattern="[A-Za-z]{3}" title="Three letter country code">
+    </form>
+
+    O atributo de espaço reservado
+    O placeholderatributo input especifica uma breve dica que descreve o valor esperado de um campo de entrada (um valor de exemplo ou uma breve descrição do formato esperado).
+
+    Uma breve dica é exibida no campo de entrada antes que o usuário insira um valor.
+
+    O placeholderatributo funciona com os seguintes tipos de entrada: texto, pesquisa, URL, número, telefone, e-mail e senha.
+
+    Exemplo
+    Um campo de entrada com um texto de exemplo:
+
+    <form>
+    <label for="phone">Enter a phone number:</label>
+    <input type="tel" id="phone" name="phone"
+    placeholder="123-45-678"
+    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+    </form>
+
+    O atributo necessário
+    O requiredatributo input especifica que um campo de entrada deve ser preenchido antes do envio do formulário.
+
+    O requiredatributo funciona com os seguintes tipos de entrada: texto, pesquisa, URL, telefone, e-mail, senha, seletores de data, número, caixa de seleção, botão de opção e arquivo.
+
+    Exemplo
+    Campo de entrada obrigatório:
+
+    <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    </form>
+
+    O atributo de etapa
+    O stepatributo de entrada especifica os intervalos numéricos válidos para um campo de entrada.
+
+    Exemplo: se step="3", os números válidos podem ser -3, 0, 3, 6, etc.
+
+    Dica: Este atributo pode ser usado em conjunto com os atributos max e min para criar um intervalo de valores válidos.
+
+    O stepatributo funciona com os seguintes tipos de entrada: número, intervalo, data, data e hora local, mês, hora e semana.
+
+    Exemplo
+    Um campo de entrada com intervalos numéricos válidos especificados:
+
+    <form>
+    <label for="points">Points:</label>
+    <input type="number" id="points" name="points" step="3">
+    </form>
+    Observação: Restrições de entrada não são infalíveis, e o JavaScript oferece muitas maneiras de adicionar entradas inválidas. Para restringir a entrada com segurança, ela também deve ser verificada pelo receptor (o servidor)!
+
+    O atributo de foco automático
+    O autofocusatributo input especifica que um campo de entrada deve receber o foco automaticamente quando a página é carregada.
+
+    Exemplo
+    Permita que o campo de entrada "Nome" receba o foco automaticamente quando a página for carregada:
+
+    <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" autofocus><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+    </form>
+
+    Os atributos de altura e largura
+    O campo de entrada height e  width atributos especificam a altura e a largura de um <input type="image">elemento.
+
+    Dica: Sempre especifique os atributos de altura e largura para as imagens. Se a altura e a largura forem definidas, o espaço necessário para a imagem será reservado quando a página for carregada. Sem esses atributos, o navegador não saberá o tamanho da imagem e não poderá reservar o espaço apropriado para ela. O efeito será que o layout da página mudará durante o carregamento (enquanto as imagens são carregadas).
+
+    Exemplo
+    Defina uma imagem como botão de envio, com atributos de altura e largura:
+
+    <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+    </form>
+
+    O atributo da lista
+    O listatributo input refere-se a um <datalist>elemento que contém opções predefinidas para um elemento <input>.
+
+    Exemplo
+    Um elemento <input> com valores predefinidos em uma <datalist>:
+
+    <form>
+    <input list="browsers">
+    <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+</form>
+
+    O atributo de autocompletar
+    O autocompleteatributo input especifica se um formulário ou um campo de entrada deve ter o recurso de preenchimento automático ativado ou desativado.
+
+    O recurso de autocompletar permite que o navegador preveja o valor. Quando um usuário começa a digitar em um campo, o navegador deve exibir opções para preencher o campo, com base nos valores digitados anteriormente.
+
+    O autocompleteatributo funciona com <form>os seguintes <input>tipos: texto, pesquisa, URL, telefone, e-mail, senha, seletores de data, intervalo e cor.
+
+    Exemplo
+    Um formulário HTML com autocompletar ativado e desativado para um campo de entrada:
+
+    <form action="/action_page.php" autocomplete="on">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" autocomplete="off"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+    Dica: Em alguns navegadores, pode ser necessário ativar a função de preenchimento automático para que isso funcione (consulte as "Preferências" no menu do navegador).
+
+    Atributos do formulário de entrada HTML
+
+    O atributo formaction
+    O atributo input formactionespecifica a URL do arquivo que processará os dados inseridos quando o formulário for enviado.
+
+    Nota: Este atributo sobrescreve o actionatributo do <form>elemento.
+
+    O formactionatributo funciona com os seguintes tipos de entrada: envio e imagem.
+
+Exemplo
+Um formulário HTML com dois botões de envio, cada um com uma ação diferente:
+
+<form action="/action_page.php">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+  <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+</form>
+
+    O atributo formenctype
+    O formenctype atributo input especifica como os dados do formulário devem ser codificados ao serem enviados (somente para formulários com método="post").
+
+    Nota: Este atributo substitui o atributo enctype do <form>elemento.
+
+    O formenctypeatributo funciona com os seguintes tipos de entrada: envio e imagem.
+
+    Exemplo
+    Um formulário com dois botões de envio. O primeiro envia os dados do formulário com a codificação padrão, o segundo envia os dados do formulário codificados como "multipart/form-data":
+
+    <form action="/action_page_binary.asp" method="post">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formenctype="multipart/form-data"
+    value="Submit as Multipart/form-data">
+    </form>
+
+    O atributo formmethod
+    O atributo input formmethod define o método HTTP para enviar os dados do formulário para a URL de ação.
+
+    Nota: Este atributo sobrescreve o atributo `method` do <form>elemento.
+
+    O formmethodatributo funciona com os seguintes tipos de entrada: envio e imagem.
+
+    Os dados do formulário podem ser enviados como variáveis ​​de URL (método="get") ou como uma transação HTTP POST (método="post").
+
+    Exemplo
+    Um formulário com dois botões de envio. O primeiro envia os dados do formulário com o método "get". O segundo envia os dados do formulário com o método "post".
+
+    <form action="/action_page.php" method="get">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit using GET">
+    <input type="submit" formmethod="post" value="Submit using POST">
+    </form>
+
+    O atributo formtarget
+    O formtargetatributo input especifica um nome ou uma palavra-chave que indica onde exibir a resposta recebida após o envio do formulário.
+
+    Nota: Este atributo sobrescreve o atributo alvo do <form>elemento.
+
+    O formtargetatributo funciona com os seguintes tipos de entrada: envio e imagem.
+
+    Exemplo
+    Um formulário com dois botões de envio, com janelas de destino diferentes:
+
+    <form action="/action_page.php">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formtarget="_blank" value="Submit to a new window/tab">
+    </form>
+
+    O atributo formnovalidato
+    O atributo input formnovalidateespecifica que um elemento <input> não deve ser validado ao ser submetido.
+
+    Nota: Este atributo substitui o atributo novalidate do <form> elemento.
+
+    O formnovalidateatributo funciona com os seguintes tipos de entrada: enviar.
+
+    Exemplo
+    Um formulário com dois botões de envio (com e sem validação):
+
+    <form action="/action_page.php">
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formnovalidate="formnovalidate"
+    value="Submit without validation">
+    </form>
+
+    O atributo novalidate
+    O novalidateatributo é um <form>atributo.
+
+    Quando presente, o parâmetro `novalidate` especifica que todos os dados do formulário não devem ser validados no momento do envio.
+
+    Exemplo
+    Especifique que nenhum dado do formulário deve ser validado no envio:
+
+    <form action="/action_page.php" novalidate>
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    -->
+</body>
+</html>

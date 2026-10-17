@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .cidade {
+            padding: 20px;
+            border: 2px solid black;
+            margin: 10px;
+            background-color: orangered;
+            color: white;
+        }
+
+        .principal {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!--
+    O classatributo HTML é usado para especificar uma classe para um elemento HTML.
+
+    Vários elementos HTML podem compartilhar a mesma classe.
+
+    A sintaxe para classe
+    Para criar uma classe, escreva um ponto (.) seguido do nome da classe. Em seguida, defina as propriedades CSS entre chaves {}:
+
+    Os elementos HTML podem pertencer a mais de uma classe.
+
+    Para definir várias classes, separe os nomes das classes com um espaço, por exemplo, <div class="city main">. O elemento será estilizado de acordo com todas as classes especificadas.
+
+     No exemplo a seguir, o primeiro <h2>elemento pertence tanto à cityclasse quanto à mainclasse e receberá os estilos CSS de ambas as classes: 
+
+    Exemplo
+    <h2 class="city main">London</h2>
+    <h2 class="city">Paris</h2>
+    <h2 class="city">Tokyo</h2>
+
+    Elementos diferentes podem compartilhar a mesma classe.
+    Diferentes elementos HTML podem apontar para o mesmo nome de classe.
+
+    No exemplo a seguir, ambos "<h2>" e "<p>" apontam para a classe "city" e compartilharão o mesmo estilo:
+
+    Exemplo
+    <h2 class="city">Paris</h2>
+    <p class="city">Paris is the capital of France</p>
+
+    O classatributo pode ser usado em qualquer elemento HTML.
+    -->
+
+    <h1>Classes</h1>
+
+    <div class="cidade principal">
+        <h2>Londres</h2>
+        <p>Londres é a capital da Inglaterra.</p>
+    </div>
+
+    <div class="cidade">
+        <h2>Paris</h2>
+        <p>Paris é a capital da França.</p>
+    </div>
+
+    <div class="cidade">
+        <h2>Tóquio</h2>
+        <p>Tóquio é a capital do Japão.</p>
+    </div>
+
+    <p class="cidade" style="margin-top: 50px;">Madri é a capital da Espanha</p>
+</body>
+</html>

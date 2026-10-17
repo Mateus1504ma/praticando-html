@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <!--
+    Formulários HTML
+
+    Um formulário HTML é usado para coletar dados inseridos pelo usuário. Esses dados são geralmente enviados a um servidor para processamento.
+
+    Elementos de formulário
+
+    O elemento <form>
+    <form>é usado para criar um formulário HTML para entrada de dados pelo usuário
+    O <form>elemento é um contêiner para diferentes tipos de elementos de entrada, como: campos de texto, caixas de seleção, botões de opção, botões de envio, etc.
+
+    O elemento <label>
+        
+    A <label>tag define um rótulo para vários elementos de formulário.
+
+    O <label>elemento é útil para usuários de leitores de tela, pois o leitor de tela lerá o rótulo em voz alta quando o usuário focar no elemento de entrada.
+    O <label>elemento também ajuda os usuários que têm dificuldade em clicar em áreas muito pequenas (como botões de opção ou caixas de seleção), pois, quando o usuário clica no texto dentro do <label>elemento, o botão de opção/caixa de seleção é alternado.
+    O foratributo da <label>tag deve ser igual ao id atributo do <input> elemento para vinculá-los.    
+    
+    TIPOS DE ENTRADA    
+        
+     O elemento <input>
+    <input>O elemento HTML é o elemento de formulário mais utilizado.
+    Um <input>elemento pode ser exibido de diversas maneiras, dependendo do type atributo.
+    Aqui estão alguns exemplos:
+
+    Campos de texto
+    Define <input type="text">um campo de entrada de texto de linha única.
+    
+    Exemplo
+    Um formulário com campos de entrada de texto:
+
+    <form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname">
+    </form>
+
+    Digite a senha
+    <input type="password">Define um campo de senha
+
+    Botões de rádio
+    O símbolo <input type="radio">define um botão de opção.
+    Os botões de opção permitem que o usuário selecione APENAS UMA dentre um número limitado de opções.
+
+    Exemplo
+    Um formulário com botões de opção:
+
+    <p>Choose your favorite Web language:</p>
+
+    <form>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">JavaScript</label>
+    </form>
+
+    caixas de seleção
+    Isso <input type="checkbox">define uma caixa de seleção .
+    As caixas de seleção permitem que o usuário selecione ZERO ou MAIS opções dentre um número limitado de escolhas.
+
+    Exemplo
+    um formulário com caixas de seleção:
+
+    <form>
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> Tenho uma bicicleta</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <label for="vehicle2"> Tenho um carro</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> Tenho um barco</label>
+    </form>
+
+    Botão de tipo de entrada
+    <input type="button">define um botão :
+
+    Exemplo
+    <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+
+    Tipo de entrada: Cor
+    Este campo <input type="color">é utilizado para campos de entrada que devem conter uma cor.
+    Dependendo da compatibilidade do navegador, um seletor de cores pode aparecer no campo de entrada.
+
+    Exemplo
+    <form>
+    <label for="favcolor">Select your favorite color:</label>
+    <input type="color" id="favcolor" name="favcolor">
+    </form>
+
+    Tipo de entrada: Data
+    Este campo <input type="date">é utilizado para campos de entrada que devem conter uma data.
+    Dependendo da compatibilidade do navegador, um seletor de datas pode aparecer no campo de entrada.
+
+    Exemplo
+    <form>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday">
+    </form>
+
+    Você também pode usar os atributos min e max para adicionar restrições às datas:
+
+    <form>
+    <label for="datemax">Enter a date before 1980-01-01:</label>
+    <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+    <label for="datemin">Enter a date after 2000-01-01:</label>
+    <input type="date" id="datemin" name="datemin" min="2000-01-02">
+    </form>
+
+    Tipo de entrada: Data e hora (local)
+    O <input type="datetime-local">campo especifica um campo de entrada de data e hora, sem fuso horário.
+    Dependendo da compatibilidade do navegador, um seletor de datas pode aparecer no campo de entrada.
+
+    Exemplo
+    <form>
+    <label for="birthdaytime">Birthday (date and time):</label>
+    <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+    </form>
+
+    Tipo de entrada: E-mail
+    Este campo <input type="email">é utilizado para campos de entrada que devem conter um endereço de e-mail.
+    Dependendo da compatibilidade do navegador, o endereço de e-mail pode ser validado automaticamente no momento do envio.
+    Alguns smartphones reconhecem o tipo de e-mail e adicionam ".com" ao teclado para corresponder à entrada de e-mail.
+
+    Tipo de entrada: Imagem
+    Isso <input type="image"> define uma imagem como um botão de envio.
+    O caminho para a imagem é especificado no srcatributo.
+
+    Exemplo
+    <form>
+    <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+    </form>
+
+    Tipo de entrada: Arquivo
+    Define <input type="file"> um campo de seleção de arquivo e um botão "Procurar" para o envio de arquivos.
+
+    Exemplo
+    <form>
+    <label for="myfile">Select a file:</label>
+    <input type="file" id="myfile" name="myfile">
+    </form>
+
+    Tipo de entrada oculto
+    Define <input type="hidden"> um campo de entrada oculto (não visível para o usuário).
+    Um campo oculto permite que os desenvolvedores web incluam dados que não podem ser vistos ou modificados pelos usuários quando um formulário é enviado.
+    Um campo oculto geralmente armazena qual registro do banco de dados precisa ser atualizado quando o formulário é enviado.
+    Observação: Embora o valor não seja exibido ao usuário no conteúdo da página, ele é visível (e pode ser editado) usando as ferramentas de desenvolvedor de qualquer navegador ou a função "Exibir código-fonte". Não use campos ocultos como forma de segurança!
+
+    Exemplo
+    <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <input type="hidden" id="custId" name="custId" value="3487">
+    <input type="submit" value="Submit">
+    </form>
+
+    Tipo de entrada: Mês
+    Isso <input type="month">permite ao usuário selecionar um mês e um ano.
+    Dependendo da compatibilidade do navegador, um seletor de datas pode aparecer no campo de entrada.
+
+    Exemplo
+    <form>
+    <label for="bdaymonth">Birthday (month and year):</label>
+    <input type="month" id="bdaymonth" name="bdaymonth">
+    </form>
+
+    Tipo de entrada: Número
+    O campo <input type="number">define um campo de entrada numérica .
+    Você também pode definir restrições sobre quais números são aceitos.
+    O exemplo a seguir exibe um campo de entrada numérica, onde você pode inserir um valor de 1 a 5:
+
+    Exemplo
+    <form>
+    <label for="quantity">Quantity (between 1 and 5):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="5">
+    </form>
+
+    O exemplo a seguir exibe um campo de entrada numérica, onde você pode inserir um valor de 0 a 100, em incrementos de 10. O valor padrão é 30:
+
+    Exemplo
+    <form>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="0" max="100" step="10" value="30">
+    </form>
+
+    Intervalo de tipo de entrada
+    O <input type="range"><number> define um controle para inserir um número cujo valor exato não é importante (como um controle deslizante). O intervalo padrão é de 0 a 100. No entanto, você pode definir restrições sobre quais números são aceitos com os atributos "min" "max" e "step":
+
+    Exemplo
+    <form>
+    <label for="vol">Volume (between 0 and 50):</label>
+    <input type="range" id="vol" name="vol" min="0" max="50">
+    </form>   
+
+    Pesquisa por tipo de entrada
+    O <input type="search">campo de pesquisa é utilizado para campos de busca (um campo de pesquisa se comporta como um campo de texto comum).
+
+    Exemplo
+    <form>
+    <label for="gsearch">Search Google:</label>
+    <input type="search" id="gsearch" name="gsearch">
+    </form>
+
+    Tipo de entrada Tel
+    Este campo <input type="tel">é utilizado para campos de entrada que devem conter um número de telefone.
+
+    Exemplo
+    <form>
+    <label for="phone">Enter your phone number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+    </form>
+
+    Tipo de entrada: Tempo
+    Permite <input type="time">ao usuário selecionar um horário (sem fuso horário).
+    Dependendo da compatibilidade do navegador, um seletor de tempo pode aparecer no campo de entrada.
+
+    Exemplo
+    <form>
+    <label for="appt">Select a time:</label>
+    <input type="time" id="appt" name="appt">
+    </form>
+
+    Tipo de entrada: URL
+    Este campo <input type="url">é utilizado para campos de entrada que devem conter um endereço URL.
+    Dependendo da compatibilidade do navegador, o campo de URL pode ser validado automaticamente ao ser enviado.
+    Alguns smartphones reconhecem o tipo de URL e adicionam ".com" ao teclado para corresponder à entrada de URL.
+
+    <form>
+    <label for="homepage">Add your homepage:</label>
+    <input type="url" id="homepage" name="homepage">
+    </form>
+
+    Tipo de entrada: Semana
+    Isso <input type="week">permite ao usuário selecionar uma semana e um ano.
+    Dependendo da compatibilidade do navegador, um seletor de datas pode aparecer no campo de entrada.
+
+    Exemplo
+    <form>
+    <label for="week">Select a week:</label>
+    <input type="week" id="week" name="week">
+    </form>
+
+    O botão Enviar
+    Define <input type="submit">um botão para enviar os dados do formulário a um manipulador de formulário.
+    O manipulador de formulários é normalmente um arquivo no servidor com um script para processar os dados de entrada.
+    O manipulador de formulário é especificado no action atributo do formulário.
+
+    Exemplo
+    Um formulário com um botão de envio:
+
+    <form action="/action_page.php">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    Redefinir tipo de entrada
+    <input type="reset">Define um botão de redefinição que restaurará todos os valores do formulário aos seus valores padrão
+
+    O atributo Name para <input>
+    Observe que cada campo de entrada deve ter um nameatributo para ser submetido.
+    Se o nameatributo for omitido, o valor do campo de entrada não será enviado.
+
+
+
+    -->
+
+    <form action="">
+        <label for="fname">Primeiro nome:</label><br>
+        <input type="text" name="fname" id="fname"><br>
+        <label for="lname">Sobrenome</label><br>
+        <input type="text" name="lname" id="lname"> <br><br>
+
+        <input type="submit" value="enviar">
+    </form>
+</body>
+</html>
